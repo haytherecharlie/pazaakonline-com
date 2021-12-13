@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import styled, { createGlobalStyle } from "styled-components"
+import { mainStyles } from "src/styles/main.styles"
 
 export default function PageLayout({ children }) {
   return (
@@ -11,15 +12,14 @@ export default function PageLayout({ children }) {
 }
 
 const S = {
-  GlobalStyle: createGlobalStyle`
-    body, #___gatsby {
-        margin: 0px;
-    }
-  `,
+  GlobalStyle: createGlobalStyle`${mainStyles}`,
   Wrapper: styled.div`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: green;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-fallback);
+    background: var(--bg-gradient);
   `,
 }

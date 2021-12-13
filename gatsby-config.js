@@ -24,10 +24,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#FFFFFF`,
-        theme_color: `#FFFFFF`,
+        background_color: `#151c3b`,
+        theme_color: `#151c3b`,
         display: `minimal-ui`,
-        icon: `static/images/yourchoice.png`,
+        icon: `static/images/icon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
