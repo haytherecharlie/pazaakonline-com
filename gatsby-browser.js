@@ -1,7 +1,18 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import React from 'react'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import { store, persistor } from './src/redux/store'
 
-// You can delete this file if you're not using it
+if (typeof window !== 'undefined') {
+  require('firebase/auth')
+  require('firebase/firestore')
+  require('firebase/analytics')
+}
+
+export const wrapRootElement = ({ element }) => (
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      {element}
+    </PersistGate>
+  </Provider>
+)
